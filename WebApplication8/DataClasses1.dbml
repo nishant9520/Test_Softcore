@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="demo1" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=GENESIS_28;Initial Catalog=demo1;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="demo1ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.Save_Customer_Details" Method="Save_Customer_Details">
+    <Parameter Name="Create_Date" Parameter="create_Date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Mobile_Number" Parameter="mobile_Number" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Delivery_date" Parameter="delivery_date" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="Save_Customer_DetailsResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Create_Date" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Mobile_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Delivery_date" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.get_customer" Method="get_customer">
+    <ElementType Name="get_customerResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Create_Date" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Mobile_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Delivery_date" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Delete_item" Method="Delete_item">
+    <Parameter Name="item_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Delete_itemResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="customer_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Bil_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="item_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Number_of_item" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="item_price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="total_Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Save_item" Method="Save_item">
+    <Parameter Name="customer_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="item_Name" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Number_of_item" Parameter="number_of_item" Type="System.Int32" DbType="Int" />
+    <Parameter Name="item_price" Type="System.Double" DbType="Float" />
+    <Parameter Name="total_Amount" Type="System.Double" DbType="Float" />
+    <Parameter Name="Bill_id" Parameter="bill_id" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="Save_itemResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="customer_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Bil_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="item_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Number_of_item" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="item_price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="total_Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
